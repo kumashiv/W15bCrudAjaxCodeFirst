@@ -35,6 +35,13 @@ namespace W15bCrudAjaxCodeFirst.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult GetEmployeeData()
+        {
+            var Emp = _db.Employees.ToList();
+            return View(Emp);
+        }
+
         public IActionResult Privacy()
         {
             return View();

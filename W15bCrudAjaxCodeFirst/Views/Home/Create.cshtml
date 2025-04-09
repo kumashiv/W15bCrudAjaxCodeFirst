@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <style>
@@ -21,8 +22,7 @@
 <h1>Create</h1>
 
 <label>Email</label>
-<input type="text" id="Email" asp-for="Email" />
-<br />
+<input type="text" id="Email" asp-for="Email" /><br />
 <span asp-validation-for="Email" class="text-danger"></span>
 <br />
 <label>Password</label>
@@ -31,18 +31,15 @@
 <br />
 
 <label>FirstName</label>
-<input type="text" id="txtFirstName" asp-for="FirstName" />
-<br />
+<input type="text" id="txtFirstName" asp-for="FirstName" /><br />
 <span asp-validation-for="FirstName" class="text-danger"></span>
 <br />
 <label>LastName</label>
-<input type="text" id="txtLastName" asp-for="LastName" />
-<br />
+<input type="text" id="txtLastName" asp-for="LastName" /><br />
 <span asp-validation-for="LastName" class="text-danger"></span>
 <br />
 <label>Address</label>
-<input type="text" id="Address" asp-for="Address" />
-<br />
+<input type="text" id="Address" asp-for="Address" /><br />
 <span asp-validation-for="Address" id="ADD"></span>
 <br />
 
@@ -55,13 +52,14 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-
 }
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="~/js/create.js"></script>
- <script>
+
+
+@*  <script>
     $(document).ready(function () {
         $("button").click(function () {
             alert("Test");    
@@ -91,5 +89,5 @@
 
         });
     });
-</script>
+</script> *@
 
