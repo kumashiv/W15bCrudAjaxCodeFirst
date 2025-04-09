@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using W15bCrudAjaxCodeFirst.AppDbContext;
 using W15bCrudAjaxCodeFirst.Models;
 
 namespace W15bCrudAjaxCodeFirst.Controllers
@@ -7,10 +8,12 @@ namespace W15bCrudAjaxCodeFirst.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly DataContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, DataContext db)
         {
             _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index()
@@ -20,6 +23,15 @@ namespace W15bCrudAjaxCodeFirst.Controllers
 
         public IActionResult Create()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Employee obj)
+        {
+            _db.Employees.Add(obj);     
+            _db.SaveChanges();
+
             return View();
         }
 

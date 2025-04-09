@@ -10,8 +10,10 @@ namespace W15bCrudAjaxCodeFirst.Models
         //[Required(ErrorMessage = "Please enter the Email address")]
         //[MaxLength(3, ErrorMessage = "Please enter the Email address")]
 
+        [Required]
         [EmailAddress(ErrorMessage = "Please enter a valid Email address")]
         public required string Email { get; set; }
+
         [Required(ErrorMessage = "Please enter the Password")]
         public required string Password { get; set; }
         
