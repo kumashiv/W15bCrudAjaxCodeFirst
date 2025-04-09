@@ -18,6 +18,11 @@ namespace W15bCrudAjaxCodeFirst.Controllers
             return View();
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
