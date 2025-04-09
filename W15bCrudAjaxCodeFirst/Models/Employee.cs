@@ -16,8 +16,6 @@ namespace W15bCrudAjaxCodeFirst.Models
         public required string Password { get; set; }
         
         //[Required(ErrorMessage = "Please enter the First Name")]
-        //[MaxLength(3,ErrorMessage = "Please enter the FirstName")]
-
 
         [Required (ErrorMessage = "Please enter the FirstName")]
         [StringLength(20, MinimumLength = 3,ErrorMessage = "FirstName should be between 3 and 20 characters.")]
