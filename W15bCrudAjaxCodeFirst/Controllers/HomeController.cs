@@ -40,6 +40,8 @@ namespace W15bCrudAjaxCodeFirst.Controllers
         {
             var Emp = _db.Employees.ToList();
             return View(Emp);
+
+            //return Json(Emp);
         }
 
         public IActionResult Privacy()
