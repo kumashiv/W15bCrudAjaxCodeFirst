@@ -35,14 +35,42 @@ namespace W15bCrudAjaxCodeFirst.Controllers
             return View();
         }
 
+
+
         [HttpGet]
-        public IActionResult GetEmployeeData()
+        public IActionResult GetEmployeeData()      //Get Employee View
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult GetData()  // Get Employee Data
         {
             var Emp = _db.Employees.ToList();
-            return View(Emp);
 
-            //return Json(Emp);
+            return Json(Emp);
         }
+
+
+        [HttpPost]
+        public IActionResult DeleteEmployee(Employee obj)
+        {
+            var Emp = _db.Employees.FirstOrDefault(x => x.Id == obj.Id);
+            _db.Employees.Remove(Emp);
+            _db.SaveChanges();
+            return RedirectToAction("GetData");
+        }
+
+
+        [HttpPost]
+        public IActionResult UpdateEmployee(Employee obj)
+        {
+            //var employees = _db.Employees.FirstOrDefault(x => x.Id == obj.Id);
+            _db.Employees.Update(obj);
+            _db.SaveChanges();
+            return Json(true);
+        }
+
 
         public IActionResult Privacy()
         {
